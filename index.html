@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>αℓ_ωalid Guardian Hub</title>
+    <script src="https://telegram.org/js/telegram-web-app.js?62"></script>
+    <style>
+      :root {
+        --bg-color: var(--tg-theme-bg-color, #f0f2f5);
+        --text-color: var(--tg-theme-text-color, #000);
+        --button-text: white;
+      }
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        text-align: center;
+        color: var(--tg-theme-link-color, #0088cc);
+        margin-bottom: 10px;
+      }
+      p.subtitle {
+        text-align: center;
+        color: #888;
+        margin-bottom: 30px;
+      }
+      .services {
+        width: 100%;
+        max-width: 400px;
+        display: grid;
+        gap: 16px;
+      }
+      button.service {
+        padding: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--button-text);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition:
+          transform 0.15s,
+          opacity 0.15s;
+      }
+      button.service:active {
+        transform: scale(0.97);
+        opacity: 0.9;
+      }
+      .service-icon {
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+        margin-right: 12px;
+        border-radius: 6px;
+        object-fit: contain;
+      }
+      #magic-eden {
+        background: linear-gradient(135deg, #10b981, #047857);
+      }
+      #opensea {
+        background: linear-gradient(135deg, #2081e2, #004ba0);
+      }
+      #blur {
+        background: linear-gradient(135deg, #7c3aed, #5b21b6);
+      }
+      #tensor {
+        background: linear-gradient(135deg, #f97316, #c2410c);
+      }
+      #custom5 {
+        background: linear-gradient(135deg, #6b7280, #374151);
+      }
+      #etherscan {
+        background: linear-gradient(135deg, #4a90e2, #2a6abf);
+      }
+      #multisender {
+        background: linear-gradient(135deg, #ff5722, #e64a19);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>αℓ_ωalid Guardian Hub</h1>
+    <p class="subtitle">Quick access to powerful services</p>
+
+    <div class="services">
+      <button
+        id="magic-eden"
+        class="service"
+        onclick="openLink('https://magiceden.io/')"
+      >
+        <img
+          src="https://seeklogo.com/images/M/magic-eden-nft-marketplace-logo-441876.png"
+          alt="Magic Eden"
+          class="service-icon"
+        />
+        Magic Eden Marketplace
+      </button>
+
+      <button
+        id="opensea"
+        class="service"
+        onclick="openLink('https://opensea.io/')"
+      >
+        <img
+          src="https://static.seadn.io/logos/Logomark-Blue.png"
+          alt="OpenSea"
+          class="service-icon"
+        />
+        OpenSea NFT Hub
+      </button>
+
+      <button id="blur" class="service" onclick="openLink('https://blur.io/')">
+        <img
+          src="https://docs.blur.foundation/assets/brand-assets/blur-logomark.png"
+          alt="Blur"
+          class="service-icon"
+        />
+        Blur Platform
+      </button>
+
+      <button
+        id="tensor"
+        class="service"
+        onclick="openLink('https://www.tensor.trade/')"
+      >
+        <img
+          src="https://www.tensor.trade/favicon.ico"
+          alt="Tensor"
+          class="service-icon"
+        />
+        Tensor (Solana)
+      </button>
+
+      <button
+        id="custom5"
+        class="service"
+        onclick="openLink('https://example.com/your-fifth-link')"
+      >
+        <img
+          src="https://via.placeholder.com/40/6b7280/FFFFFF?text=Custom"
+          alt="Custom"
+          class="service-icon"
+        />
+        Your Custom Service / Community
+      </button>
+
+      <button
+        id="etherscan"
+        class="service"
+        onclick="openLink('https://etherscan.io/')"
+      >
+        <img
+          src="https://etherscan.io/images/etherscan_logo.svg"
+          alt="Etherscan"
+          class="service-icon"
+        />
+        Etherscan Explorer
+      </button>
+
+      <button
+        id="multisender"
+        class="service"
+        onclick="openLink('https://disperse.app/')"
+      >
+        <img
+          src="https://via.placeholder.com/40/ff5722/FFFFFF?text=Multi"
+          alt="Batch Transfer"
+          class="service-icon"
+        />
+        Batch / Multi Wallet Transfer (Disperse)
+      </button>
+
+      <button
+        id="slerftools"
+        class="service"
+        onclick="openLink('https://slerf.tools/en-us/multi-sender/solana')"
+      >
+        <img
+          src="https://via.placeholder.com/40/10b981/FFFFFF?text=Slerf"
+          alt="SlerfTools"
+          class="service-icon"
+        />
+        Batch Transfer (SlerfTools - Solana)
+      </button>
+    </div>
+
+    <div style="margin-top: 40px; width: 100%; max-width: 400px">
+      <h3>Share Your Wallets</h3>
+      <input
+        type="text"
+        id="evm-wallet"
+        placeholder="EVM Address (0x...)"
+        style="
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+        "
+      />
+      <input
+        type="text"
+        id="sol-wallet"
+        placeholder="Solana Address"
+        style="
+          width: 100%;
+          padding: 12px;
+          margin: 8px 0;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+        "
+      />
+      <button
+        onclick="submitWallets()"
+        style="
+          width: 100%;
+          padding: 16px;
+          background: #0088cc;
+          color: white;
+          border: none;
+          border-radius: 12px;
+          font-weight: bold;
+          margin-top: 12px;
+        "
+      >
+        Submit Wallets
+      </button>
+    </div>
+
+    <script>
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+
+      function openLink(url) {
+        Telegram.WebApp.openLink(url, { try_instant_view: false });
+      }
+
+      function submitWallets() {
+        const data = {
+          evm: document.getElementById("evm-wallet").value,
+          sol: document.getElementById("sol-wallet").value,
+        };
+        Telegram.WebApp.sendData(JSON.stringify(data));
+        Telegram.WebApp.close();
+      }
+
+      function updateTheme() {
+        document.documentElement.style.setProperty(
+          "--bg-color",
+          Telegram.WebApp.themeParams.bg_color,
+        );
+        document.documentElement.style.setProperty(
+          "--text-color",
+          Telegram.WebApp.themeParams.text_color,
+        );
+      }
+      updateTheme();
+      Telegram.WebApp.onEvent("themeChanged", updateTheme);
+    </script>
+  </body>
+</html>
