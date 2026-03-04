@@ -1,260 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>αℓ_ωalid Guardian Hub</title>
-    <script src="https://telegram.org/js/telegram-web-app.js?62"></script>
-    <style>
-      :root {
-        --bg-color: var(--tg-theme-bg-color, #f0f2f5);
-        --text-color: var(--tg-theme-text-color, #000);
-        --button-text: white;
-      }
-      body {
-        margin: 0;
-        padding: 20px;
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background: var(--bg-color);
-        color: var(--text-color);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      h1 {
-        text-align: center;
-        color: var(--tg-theme-link-color, #0088cc);
-        margin-bottom: 10px;
-      }
-      p.subtitle {
-        text-align: center;
-        color: #888;
-        margin-bottom: 30px;
-      }
-      .services {
-        width: 100%;
-        max-width: 400px;
-        display: grid;
-        gap: 16px;
-      }
-      button.service {
-        padding: 16px;
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--button-text);
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transition:
-          transform 0.15s,
-          opacity 0.15s;
-      }
-      button.service:active {
-        transform: scale(0.97);
-        opacity: 0.9;
-      }
-      .service-icon {
-        width: 32px;
-        height: 32px;
-        vertical-align: middle;
-        margin-right: 12px;
-        border-radius: 6px;
-        object-fit: contain;
-      }
-      #magic-eden {
-        background: linear-gradient(135deg, #10b981, #047857);
-      }
-      #opensea {
-        background: linear-gradient(135deg, #2081e2, #004ba0);
-      }
-      #blur {
-        background: linear-gradient(135deg, #7c3aed, #5b21b6);
-      }
-      #tensor {
-        background: linear-gradient(135deg, #f97316, #c2410c);
-      }
-      #custom5 {
-        background: linear-gradient(135deg, #6b7280, #374151);
-      }
-      #etherscan {
-        background: linear-gradient(135deg, #4a90e2, #2a6abf);
-      }
-      #multisender {
-        background: linear-gradient(135deg, #ff5722, #e64a19);
-      }
-    </style>
-  </head>
-  <body>
-    <h1>αℓ_ωalid Guardian Hub</h1>
-    <p class="subtitle">Quick access to powerful services</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>αℓ_ωalid Hub</title>
+  <script src="https://telegram.org/js/telegram-web-app.js?62"></script>
+  <style>
+    :root {
+      --bg-color: var(--tg-theme-bg-color, #f0f2f5);
+      --text-color: var(--tg-theme-text-color, #000);
+      --button-text: white;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 { text-align: center; color: var(--tg-theme-link-color, #0088cc); margin-bottom: 10px; }
+    p.subtitle { text-align: center; color: #888; margin-bottom: 30px; }
+    .services {
+      width: 100%;
+      max-width: 400px;
+      display: grid;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    button.service, button.action {
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--button-text);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.15s, opacity 0.15s;
+    }
+    button.service:active, button.action:active { transform: scale(0.97); opacity: 0.9; }
+    .service-icon {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+      margin-right: 12px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    #portfolio-result {
+      margin-top: 20px;
+      padding: 16px;
+      background: rgba(0,0,0,0.08);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      font-size: 14px;
+    }
+    /* Gradients */
+    #magic-eden   { background: linear-gradient(135deg, #10b981, #047857); }
+    #opensea      { background: linear-gradient(135deg, #2081e2, #004ba0); }
+    #etherscan    { background: linear-gradient(135deg, #4a90e2, #2a6abf); }
+    #zerion       { background: linear-gradient(135deg, #6366f1, #4f46e5); margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>αℓ_ωalid Hub</h1>
+  <p class="subtitle">Quick access to tools & services</p>
 
-    <div class="services">
-      <button
-        id="magic-eden"
-        class="service"
-        onclick="openLink('https://magiceden.io/')"
-      >
-        <img
-          src="https://seeklogo.com/images/M/magic-eden-nft-marketplace-logo-441876.png"
-          alt="Magic Eden"
-          class="service-icon"
-        />
-        Magic Eden Marketplace
-      </button>
+  <div class="services">
+    <button id="magic-eden" class="service" onclick="openLink('https://magiceden.io/')">
+      <img src="https://seeklogo.com/images/M/magic-eden-nft-marketplace-logo-441876.png" alt="Magic Eden" class="service-icon" />
+      Magic Eden Marketplace
+    </button>
 
-      <button
-        id="opensea"
-        class="service"
-        onclick="openLink('https://opensea.io/')"
-      >
-        <img
-          src="https://static.seadn.io/logos/Logomark-Blue.png"
-          alt="OpenSea"
-          class="service-icon"
-        />
-        OpenSea NFT Hub
-      </button>
+    <button id="opensea" class="service" onclick="openLink('https://opensea.io/')">
+      <img src="https://static.seadn.io/logos/Logomark-Blue.png" alt="OpenSea" class="service-icon" />
+      OpenSea NFT Hub
+    </button>
 
-      <button id="blur" class="service" onclick="openLink('https://blur.io/')">
-        <img
-          src="https://docs.blur.foundation/assets/brand-assets/blur-logomark.png"
-          alt="Blur"
-          class="service-icon"
-        />
-        Blur Platform
-      </button>
+    <button id="etherscan" class="service" onclick="openLink('https://etherscan.io/')">
+      <img src="https://etherscan.io/images/etherscan_logo.svg" alt="Etherscan" class="service-icon" />
+      Etherscan Explorer
+    </button>
+  </div>
 
-      <button
-        id="tensor"
-        class="service"
-        onclick="openLink('https://www.tensor.trade/')"
-      >
-        <img
-          src="https://www.tensor.trade/favicon.ico"
-          alt="Tensor"
-          class="service-icon"
-        />
-        Tensor (Solana)
-      </button>
+  <div style="width: 100%; max-width: 400px;">
+    <h3>Share Your Wallets</h3>
+    <input type="text" id="evm-wallet" placeholder="EVM Address (0x...)" />
+    <input type="text" id="sol-wallet" placeholder="Solana Address" />
+    <button onclick="submitWallets()" style="width:100%; padding:16px; background:#0088cc; color:white; border:none; border-radius:12px; font-weight:bold; margin-top:12px;">
+      Submit Wallets
+    </button>
+  </div>
 
-      <button
-        id="custom5"
-        class="service"
-        onclick="openLink('https://example.com/your-fifth-link')"
-      >
-        <img
-          src="https://via.placeholder.com/40/6b7280/FFFFFF?text=Custom"
-          alt="Custom"
-          class="service-icon"
-        />
-        Your Custom Service / Community
-      </button>
+  <button onclick="fetchZerionPortfolio()" id="zerion" class="service">
+    Check Zerion Portfolio
+  </button>
 
-      <button
-        id="etherscan"
-        class="service"
-        onclick="openLink('https://etherscan.io/')"
-      >
-        <img
-          src="https://etherscan.io/images/etherscan_logo.svg"
-          alt="Etherscan"
-          class="service-icon"
-        />
-        Etherscan Explorer
-      </button>
+  <div id="portfolio-result"></div>
 
-      <button
-        id="multisender"
-        class="service"
-        onclick="openLink('https://disperse.app/')"
-      >
-        <img
-          src="https://via.placeholder.com/40/ff5722/FFFFFF?text=Multi"
-          alt="Batch Transfer"
-          class="service-icon"
-        />
-        Batch / Multi Wallet Transfer (Disperse)
-      </button>
-    </div>
+  <script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
 
-    <div style="margin-top: 40px; width: 100%; max-width: 400px">
-      <h3>Share Your Wallets</h3>
-      <input
-        type="text"
-        id="evm-wallet"
-        placeholder="EVM Address (0x...)"
-        style="
-          width: 100%;
-          padding: 12px;
-          margin: 8px 0;
-          border-radius: 8px;
-          border: 1px solid #ccc;
-        "
-      />
-      <input
-        type="text"
-        id="sol-wallet"
-        placeholder="Solana Address"
-        style="
-          width: 100%;
-          padding: 12px;
-          margin: 8px 0;
-          border-radius: 8px;
-          border: 1px solid #ccc;
-        "
-      />
-      <button
-        onclick="submitWallets()"
-        style="
-          width: 100%;
-          padding: 16px;
-          background: #0088cc;
-          color: white;
-          border: none;
-          border-radius: 12px;
-          font-weight: bold;
-          margin-top: 12px;
-        "
-      >
-        Submit Wallets
-      </button>
-    </div>
+    function openLink(url) {
+      Telegram.WebApp.openLink(url, { try_instant_view: false });
+    }
 
-    <script>
-      Telegram.WebApp.ready();
-      Telegram.WebApp.expand();
-
-      function openLink(url) {
-        Telegram.WebApp.openLink(url, { try_instant_view: false });
+    function submitWallets() {
+      const data = {
+        evm: document.getElementById('evm-wallet').value.trim(),
+        sol: document.getElementById('sol-wallet').value.trim()
+      };
+      if (!data.evm && !data.sol) {
+        alert("Please enter at least one wallet address");
+        return;
       }
+      Telegram.WebApp.sendData(JSON.stringify(data));
+      Telegram.WebApp.close();
+    }
 
-      function submitWallets() {
-        const data = {
-          evm: document.getElementById("evm-wallet").value,
-          sol: document.getElementById("sol-wallet").value,
-        };
-        Telegram.WebApp.sendData(JSON.stringify(data));
-        Telegram.WebApp.close();
-      }
+    async function fetchZerionPortfolio() {
+      const resultDiv = document.getElementById('portfolio-result');
+      resultDiv.innerHTML = '<p>Loading portfolio...</p>';
 
-      function updateTheme() {
-        document.documentElement.style.setProperty(
-          "--bg-color",
-          Telegram.WebApp.themeParams.bg_color,
+      const apiKey = 'zk_9463633376d94d9babb6df550964fa9d';
+      const auth = btoa(apiKey + ':');
+
+      try {
+        const response = await fetch(
+          'https://api.zerion.io/v1/wallets/0x42b9df65b219b3dd36ff330a4dd8f327a6ada990/portfolio',
+          {
+            headers: {
+              'Authorization': `Basic ${auth}`,
+              'accept': 'application/json'
+            }
+          }
         );
-        document.documentElement.style.setProperty(
-          "--text-color",
-          Telegram.WebApp.themeParams.text_color,
-        );
+
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+        resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      } catch (err) {
+        resultDiv.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
       }
-      updateTheme();
-      Telegram.WebApp.onEvent("themeChanged", updateTheme);
-    </script>
-  </body>
+    }
+
+    function updateTheme() {
+      const params = Telegram.WebApp.themeParams;
+      document.documentElement.style.setProperty('--bg-color', params.bg_color || '#f0f2f5');
+      document.documentElement.style.setProperty('--text-color', params.text_color || '#000');
+    }
+    updateTheme();
+    Telegram.WebApp.onEvent('themeChanged', updateTheme);
+  </script>
+</body>
 </html>
